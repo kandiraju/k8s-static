@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+ name: static-ingress
+ namespace: static
+spec:
+ rules:
+ - host: dev-static.jagadishkandi.xyz
+   http:
+     paths:
+       backend:
+         service:
+           name: k8s-static-svc
+           port: 80
+         
